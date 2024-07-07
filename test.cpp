@@ -9,7 +9,7 @@ using namespace std;
 
 void createArr(){
     int x, y, a, N;
-    int numb = 0;                                               //счетчик переменных по индексу Y
+    int numb = 0;                                               //счетчик переменных по индексу Y, необходим для исключения N-ых строк
     a = 0;
 
     cout << "Enter rows: ";
