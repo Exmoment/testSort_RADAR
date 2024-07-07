@@ -55,7 +55,7 @@ void createArr(){
     for(int i = 0; i < x; i++){
         for(int j = 0; j< y; j++){
 
-            cout << "Enter element " << i << " " << j << ": ";
+            cout << "Enter element with index " << i << " " << j << ": ";
             while(true){
                 cin >> arr[i][j];
                 if(cin.fail()) {
@@ -88,7 +88,7 @@ void createArr(){
             }
         }
 
-    cout << " \n";
+    cout << " \n";                                             //вывод старого массива
     cout << "it's old array:\n";
     for(int i = 0; i < x; i++){
         for(int j = 0; j < y; j++){
@@ -102,7 +102,7 @@ void createArr(){
         }
     }
 
-    cout << " \n";
+    cout << " \n";                                              //вывод нового массива
     cout << "it's new array:\n";
     for(int i = 0; i < x; i++){
         for(int j = 0; j < y; j++){
