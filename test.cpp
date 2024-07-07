@@ -57,17 +57,7 @@ void createArr(){
             }
         }
     }
-    for(int i = 0; i < x; i++){
-        for(int j = 0; j < y; j++){
-            
-            if(j < 1){
-                cout << arr[i][j] << " ";
-            } else{
-                cout << arr[i][j] << "\n";
-            }
-            
-        }
-    }
+    
     for(int i = 0; i < x; i++){
         if(arr[i][1] == arr[i+1][1]){
             if(numb == 1){
@@ -86,6 +76,20 @@ void createArr(){
             }
         }
 
+    cout << "it's old array:\n";
+    for(int i = 0; i < x; i++){
+        for(int j = 0; j < y; j++){
+            
+            if(j < 1){
+                cout << arr[i][j] << " ";
+            } else{
+                cout << arr[i][j] << "\n";
+            }
+            
+        }
+    }
+
+    cout << " \n";
     cout << "it's new array:\n";
     for(int i = 0; i < x; i++){
         for(int j = 0; j < y; j++){
