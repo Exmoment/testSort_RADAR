@@ -8,7 +8,7 @@ using namespace std;
 
 
 void createArr(){
-    int x, y, a;
+    int x, y, a, N;
     int numb = 0;                                               //счетчик переменных по индексу Y
     a = 0;
 
@@ -36,6 +36,18 @@ void createArr(){
             break;
         }
     }
+    cout << "Enter N: ";
+    while(true){
+        cin >> N;                                               //параметр для исключения каждой N-ой строки
+        if(cin.fail()) {
+            cin.clear();
+            cin.ignore();
+            cout << "Not num" << std::endl;
+        } else {
+            std::cout << "done! num is: " << N << std::endl;
+            break;
+        }
+    }
 
     int arr[x][y];                                              //основной массив
     int newArr[x][y];                                           //отсортированный массив
@@ -60,7 +72,7 @@ void createArr(){
     
     for(int i = 0; i < x; i++){
         if(arr[i][1] == arr[i+1][1]){
-            if(numb == 1){
+            if(numb == (N - 1)){
                cout << "Row " << i << " is deleted" << endl;
             } else{
                 newArr[a][0] = arr[i][0];
@@ -75,7 +87,7 @@ void createArr(){
                 a++;
             }
         }
-        
+
     cout << " \n";
     cout << "it's old array:\n";
     for(int i = 0; i < x; i++){
