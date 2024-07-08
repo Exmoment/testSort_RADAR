@@ -20,7 +20,6 @@ void createArr(){
             cin.ignore();
             cout << "Not num" << std::endl;
         } else {
-            std::cout << "done! num is: " << x << std::endl;
             break;
         }
     }
@@ -32,7 +31,6 @@ void createArr(){
             cin.ignore();
             cout << "Not num" << std::endl;
         } else {
-            std::cout << "done! num is: " << y << std::endl;
             break;
         }
     }
@@ -44,7 +42,6 @@ void createArr(){
             cin.ignore();
             cout << "Not num" << std::endl;
         } else {
-            std::cout << "done! num is: " << N << std::endl;
             break;
         }
     }
@@ -63,7 +60,6 @@ void createArr(){
                     cin.ignore();
                     cout << "Not num" << std::endl;
                 } else {
-                    std::cout << "done! num is: " << arr[i][j] << std::endl;
                     break;
                 }
             }
@@ -87,6 +83,12 @@ void createArr(){
                 a++;
             }
         }
+    while(a < x){
+        for(int j = 0; j < y; j++){
+            newArr[a][j] = 00;
+        }
+        a++;
+    }
 
     cout << " \n";                                             //вывод старого массива
     cout << "it's old array:\n";
