@@ -1,8 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <iomanip>
-#include <string>
-#include <vector>
 
 using namespace std;
 
@@ -19,6 +16,7 @@ void createArr(){
             cin.clear();
             cin.ignore();
             cout << "Not num" << std::endl;
+            cout << "Enter rows: ";
         } else {
             break;
         }
@@ -30,6 +28,7 @@ void createArr(){
             cin.clear();
             cin.ignore();
             cout << "Not num" << std::endl;
+            cout << "Enter columns: ";
         } else {
             break;
         }
@@ -41,6 +40,7 @@ void createArr(){
             cin.clear();
             cin.ignore();
             cout << "Not num" << std::endl;
+            cout << "Enter N: ";
         } else {
             break;
         }
@@ -59,6 +59,7 @@ void createArr(){
                     cin.clear();
                     cin.ignore();
                     cout << "Not num" << std::endl;
+                    cout << "Enter element with index " << i << " " << j << ": ";
                 } else {
                     break;
                 }
@@ -69,7 +70,7 @@ void createArr(){
     for(int i = 0; i < x; i++){
         if(arr[i][1] == arr[i+1][1]){
             if(numb == (N - 1)){
-               cout << "Row " << i << " is deleted" << endl;
+               cout << "Row " << i+1 << " is deleted" << endl;
             } else{
                 newArr[a][0] = arr[i][0];
                 newArr[a][1] = arr[i][1];
@@ -89,7 +90,7 @@ void createArr(){
         }
         a++;
     }
-
+/*
     cout << " \n";                                             //вывод старого массива
     cout << "it's old array:\n";
     for(int i = 0; i < x; i++){
@@ -103,7 +104,8 @@ void createArr(){
             
         }
     }
-
+*/
+/*
     cout << " \n";                                              //вывод нового массива
     cout << "it's new array:\n";
     for(int i = 0; i < x; i++){
@@ -116,6 +118,41 @@ void createArr(){
             }
         }
     }
+}
+*/
+    ofstream inputFile;                                       //вывод в файле входного массива данных
+    inputFile.open("input.txt", ios_base::out);
+    if (inputFile.is_open()){
+
+        for(int i = 0; i < x; i++){
+            for(int j = 0; j< y; j++){
+                
+                if(j == 1){
+                    inputFile << arr[i][j] << endl;
+                } else {
+                    inputFile << arr[i][j] << " ";
+                }
+            }
+        }
+    }
+    inputFile.close();
+
+    ofstream resultFile;                                       //вывод в файле результирующего массива данных
+    resultFile.open("result.txt", ios_base::out);
+    if (resultFile.is_open()){
+
+        for(int i = 0; i < x; i++){
+            for(int j = 0; j< y; j++){
+                
+                if(j == 1){
+                    resultFile << newArr[i][j] << endl;
+                } else {
+                    resultFile << newArr[i][j] << " ";
+                }
+            }
+        }
+    }
+    resultFile.close();
 }
 /*
 void readArr(){
