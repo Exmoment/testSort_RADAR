@@ -154,8 +154,29 @@ void readArr(){
 }*/
 
 int main(){
+    int x;
+    bool y = true;
+    
 
-    createArr();
-
+    while(y != false){
+        cout << "Enter 1 if you want to load data from a file" << endl;
+        cout << "Enter 2 if you want to enter the data yourself" << endl;
+        cin >> x;
+        switch(x){
+            case 1:{
+                createArr();
+                break;
+            }
+            case 2:{
+                createArr();
+                break;
+            }
+            case 3:{
+                y = false;
+                break;
+            }
+            break;
+        }
+    }
     return 0;
 }
