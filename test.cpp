@@ -5,7 +5,7 @@ using namespace std;
 
 
 void createArr(){
-    int x, y, a, N;
+    int x, y = 2, a, N;
     int numb = 0;                                               //счетчик переменных по индексу Y, необходим для исключения N-ых строк
     a = 0;
 
@@ -21,18 +21,7 @@ void createArr(){
             break;
         }
     }
-    cout << "Enter columns: ";
-    while(true){
-        cin >> y;
-        if(cin.fail()) {
-            cin.clear();
-            cin.ignore();
-            cout << "Not num" << std::endl;
-            cout << "Enter columns: ";
-        } else {
-            break;
-        }
-    }
+
     cout << "Enter N: ";
     while(true){
         cin >> N;                                               //параметр для исключения каждой N-ой строки
@@ -90,36 +79,7 @@ void createArr(){
         }
         a++;
     }
-/*
-    cout << " \n";                                             //вывод старого массива
-    cout << "it's old array:\n";
-    for(int i = 0; i < x; i++){
-        for(int j = 0; j < y; j++){
-            
-            if(j < 1){
-                cout << arr[i][j] << " ";
-            } else{
-                cout << arr[i][j] << "\n";
-            }
-            
-        }
-    }
-*/
-/*
-    cout << " \n";                                              //вывод нового массива
-    cout << "it's new array:\n";
-    for(int i = 0; i < x; i++){
-        for(int j = 0; j < y; j++){
 
-            if(j < 1){
-                cout << newArr[i][j] << " ";
-            } else{
-                cout << newArr[i][j] << "\n";
-            }
-        }
-    }
-}
-*/
     ofstream inputFile;                                       //вывод в файле входного массива данных
     inputFile.open("input.txt", ios_base::out);
     if (inputFile.is_open()){
