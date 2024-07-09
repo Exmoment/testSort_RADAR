@@ -15,7 +15,7 @@ void createArr(){
         if(cin.fail()) {                                        //проверка ввода числового значения
             cin.clear();
             cin.ignore();
-            cout << "Not num" << std::endl;
+            cout << "Not num" << endl;
             cout << "Enter rows: ";
         } else {
             break;
@@ -29,7 +29,7 @@ void createArr(){
             if(cin.fail()) {
                 cin.clear();
                 cin.ignore();
-                cout << "Not num" << std::endl;
+                cout << "Not num" << endl;
                 cout << "Enter N: ";
             } else {
                 break;
@@ -37,7 +37,7 @@ void createArr(){
         } else{
             cin.clear();
             cin.ignore();
-            cout << "N must be > 2" << std::endl;
+            cout << "N must be > 2" << endl;
             cout << "Enter N: ";
         }
     }
@@ -54,7 +54,7 @@ void createArr(){
                 if(cin.fail()) {
                     cin.clear();
                     cin.ignore();
-                    cout << "Not num" << std::endl;
+                    cout << "Not num" << endl;
                     cout << "Enter element with index " << i << " " << j << ": ";
                 } else {
                     break;
