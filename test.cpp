@@ -15,7 +15,7 @@ void createArr(){
         if(cin.fail()) {                                        //проверка ввода числового значения
             cin.clear();
             cin.ignore();
-            cout << "Not num" << endl;
+            cout << "ERROR. Not num" << endl;
             cout << "Enter rows: ";
         } else {
             break;
@@ -29,7 +29,7 @@ void createArr(){
             if(cin.fail()) {
                 cin.clear();
                 cin.ignore();
-                cout << "Not num" << endl;
+                cout << "ERROR. Not num" << endl;
                 cout << "Enter N: ";
             } else {
                 break;
@@ -37,7 +37,7 @@ void createArr(){
         } else{
             cin.clear();
             cin.ignore();
-            cout << "N must be > 2" << endl;
+            cout << "ERROR. N must be > 2" << endl;
             cout << "Enter N: ";
         }
     }
@@ -54,7 +54,7 @@ void createArr(){
                 if(cin.fail()) {
                     cin.clear();
                     cin.ignore();
-                    cout << "Not num" << endl;
+                    cout << "ERROR. Not num" << endl;
                     cout << "Enter element with index " << i << " " << j << ": ";
                 } else {
                     break;
@@ -137,7 +137,7 @@ void readArr(){
             if(cin.fail()) {
                 cin.clear();
                 cin.ignore();
-                cout << "Not num" << endl;
+                cout << "ERROR. Not num" << endl;
                 cout << "Enter N: ";
             } else {
                 break;
@@ -145,7 +145,7 @@ void readArr(){
         } else{
             cin.clear();
             cin.ignore();
-            cout << "N must be > 2" << endl;
+            cout << "ERROR. N must be > 2" << endl;
             cout << "Enter N: ";
         }
     }
@@ -163,7 +163,7 @@ void readArr(){
             inputFile.close();
             break;
         } else{
-            cout<< "Error. File not found> try again" << endl;
+            cout<< "ERROR. File not found> try again" << endl;
         }
     }
     int arr[countRows][y];
@@ -229,20 +229,24 @@ int main(){
         cout << "Enter 2 if you want to enter the data yourself" << endl;
         cout << "Enter 3 if you save result and close program" << endl;
         cin >> x;
-        switch(x){
-            case 1:{
-                readArr();
+        if((x > 3) or (x < 1)){
+            cout << "ERROR. You entered an incorrect value. Try again" << endl;
+        } else{
+            switch(x){
+                case 1:{
+                    readArr();
+                    break;
+                }
+                case 2:{
+                    createArr();
+                    break;
+                }
+                case 3:{
+                    var = false;
+                    break;
+                }
                 break;
             }
-            case 2:{
-                createArr();
-                break;
-            }
-            case 3:{
-                var = false;
-                break;
-            }
-            break;
         }
     }
     return 0;
