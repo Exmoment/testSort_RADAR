@@ -123,58 +123,46 @@ void createArr(){
     }
     resultFile.close();
 }
-/*
+
 void readArr(){
-    string filename;
-    // Имя файла
-    cout << "Введите имя файла: ";
-    cin >> filename;
-
-    ifstream mFile (filename);
-
-    int rows = 0, cols = 0;
-    if (mFile.is_open()) {
-        while (!mFile.eof()) {
-            string line;
-            getline(mFile, line);
-
-            // Разбиваем строку на элементы массива
-            vector<string> elements = split(line, ' ');
-
-            rows += 1;
-            cols = max(cols, elements.size());
+    bool var = true;
+    int coutRows = 0;
+    string line, pathToFile;
+    
+    ifstream inputFile;
+    while(true){
+        cout << "Enter path to input file" << endl;
+        cin >> pathToFile;                                        //ручной ввод пути к файлу
+        inputFile.open(pathToFile);
+        if(inputFile.is_open()){
+            while(!inputFile.eof()){
+                getline(inputFile, line);
+                cout<< line << endl;
+                coutRows++;
+            }
+            inputFile.close();
+            int arr[coutRows][2];
+            break;
+        } else{
+            cout<< "Error. File not found> try again" << endl;
         }
     }
-    mFile.close();
-
-    cout << "Количество строк: " << rows << endl;
-    cout << "Количество столбцов: " << cols << endl;
-
-    const int row = 5, column = 7;
-    int array[row][column];
-    ifstream f("input.txt");
-
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < column; j++) {
-           f >> array[i][j];
-           cout << array[i][j] << endl;
-        }
-    }
-}*/
+    
+}
 
 int main(){
     int x;
-    bool y = true;
+    bool var = true;
     
 
-    while(y != false){
+    while(var != false){
         cout << "Enter 1 if you want to load data from a file" << endl;
         cout << "Enter 2 if you want to enter the data yourself" << endl;
         cout << "Enter 3 if you want close this program" << endl;
         cin >> x;
         switch(x){
             case 1:{
-                createArr();
+                readArr();
                 break;
             }
             case 2:{
@@ -182,7 +170,7 @@ int main(){
                 break;
             }
             case 3:{
-                y = false;
+                var = false;
                 break;
             }
             break;
