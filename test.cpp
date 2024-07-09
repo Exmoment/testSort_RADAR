@@ -5,7 +5,7 @@ using namespace std;
 
 
 void createArr(){
-    int x, y = 2, a, N;
+    int x, y = 2, a, k = 0, N;
     int numb = 0;                                               //счетчик переменных по индексу Y, необходим для исключения N-ых строк
     a = 0;
 
@@ -24,19 +24,26 @@ void createArr(){
 
     cout << "Enter N: ";
     while(true){
-        cin >> N;                                               //параметр для исключения каждой N-ой строки
-        if(cin.fail()) {
+        cin >> N;
+        if(N >= 2){//параметр для исключения каждой N-ой строки
+            if(cin.fail()) {
+                cin.clear();
+                cin.ignore();
+                cout << "Not num" << std::endl;
+                cout << "Enter N: ";
+            } else {
+                break;
+            }
+        } else{
             cin.clear();
             cin.ignore();
-            cout << "Not num" << std::endl;
+            cout << "N must be > 2" << std::endl;
             cout << "Enter N: ";
-        } else {
-            break;
         }
     }
 
     int arr[x][y];                                              //основной массив
-    int newArr[x][y];                                           //отсортированный массив
+    int newArr[x][y];                                           //результирующий массив
 
     for(int i = 0; i < x; i++){
         for(int j = 0; j< y; j++){
@@ -73,11 +80,13 @@ void createArr(){
                 a++;
             }
         }
+    
     while(a < x){
         for(int j = 0; j < y; j++){
             newArr[a][j] = 00;
         }
         a++;
+        k++;
     }
 
     ofstream inputFile;                                       //вывод в файле входного массива данных
@@ -101,7 +110,7 @@ void createArr(){
     resultFile.open("result.txt", ios_base::out);
     if (resultFile.is_open()){
 
-        for(int i = 0; i < x; i++){
+        for(int i = 0; i < (a - k); i++){
             for(int j = 0; j< y; j++){
                 
                 if(j == 1){
