@@ -227,7 +227,7 @@ int main(){
     while(var != false){
         cout << "Enter 1 if you want to load data from a file" << endl;
         cout << "Enter 2 if you want to enter the data yourself" << endl;
-        cout << "Enter 3 if you want close this program" << endl;
+        cout << "Enter 3 if you save result and close program" << endl;
         cin >> x;
         switch(x){
             case 1:{
